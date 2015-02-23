@@ -19,8 +19,15 @@ public class SimpleEx implements Executor {
     }
 
     @Override
-    public void execute(Runnable command) {
+    public void execute(Runnable t) {
 
-        this.ExList.add(command);
+        this.ExList.add(t);
+
+    }
+
+    public int GetMaxPendingTime(){
+        int num = this.ExList.Jobs.size();
+        int max = num * 1000;
+        return max;
     }
 }
